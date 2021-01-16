@@ -11,17 +11,17 @@ const {
 	GraphQLList,
 } = graphql
 
-const author = {
+const addAuthor = {
 	type: AuthorType,
 	args: {
-		id: { type: GraphQLID },
+		name: { type: GraphQLString },
+		age: { type: GraphQLInt },
 	},
-	resolve(parent, args) {},
+	resolve(parent, args) {
+		let author = new Author({ name: args.name, age: args.age })
+
+		return author.save()
+	},
 }
 
-const authors = {
-	type: new GraphQLList(AuthorType),
-	resolve(parent, args) {},
-}
-
-module.exports = { author, authors }
+module.exports = { addAuthor }

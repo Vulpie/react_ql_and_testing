@@ -1,7 +1,10 @@
 const graphql = require('graphql')
 
-const { book, books } = require('./schema/book')
-const { author, authors } = require('./schema/author')
+const { book, books } = require('./queries/book')
+const { author, authors } = require('./queries/author')
+
+const { addAuthor } = require('./mutations/author')
+const { addBook } = require('./mutations/book')
 
 const { GraphQLObjectType, GraphQLSchema } = graphql
 
@@ -16,6 +19,15 @@ const RootQuery = new GraphQLObjectType({
 	},
 })
 
+const RootMutation = new GraphQLObjectType({
+	name: 'Mutation',
+	fields: {
+		addAuthor,
+		addBook,
+	},
+})
+
 module.exports = new GraphQLSchema({
 	query: RootQuery,
+	mutation: RootMutation,
 })

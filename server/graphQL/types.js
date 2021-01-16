@@ -1,5 +1,6 @@
 const graphql = require('graphql')
-
+const Author = require('../db/models/author')
+const Book = require('../db/models/book')
 const {
 	GraphQLObjectType,
 	GraphQLString,
@@ -17,7 +18,9 @@ const AuthorType = new GraphQLObjectType({
 		age: { type: GraphQLInt },
 		books: {
 			type: new GraphQLList(BookType),
-			resolve(parent, args) {},
+			resolve(parent, args) {
+				return Book.find({ authorId: parent.id })
+			},
 		},
 	}),
 })
@@ -30,7 +33,9 @@ const BookType = new GraphQLObjectType({
 		genre: { type: GraphQLString },
 		author: {
 			type: AuthorType,
-			resolve(parent, args) {},
+			resolve(parent, args) {
+				return Author.findById(parent.authorId)
+			},
 		},
 	}),
 })
