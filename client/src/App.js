@@ -1,7 +1,12 @@
 import './App.css'
-import BookList from './Components/BookList'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-import AddAuthor from './Components/AddAuthor'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import BookList from './Components/Lists/BookList'
+import Book from './Components/Book/Book'
+import Home from './Components/Home'
+import Author from './Components/Author/Author'
+import AuthorList from './Components/Lists/AuthorList'
 
 const client = new ApolloClient({
 	uri: '/graphql',
@@ -11,10 +16,26 @@ const client = new ApolloClient({
 function App() {
 	return (
 		<div className='App'>
-			<h1>Reading List</h1>
 			<ApolloProvider client={client}>
-				<AddAuthor />
-				<BookList />
+				<Router>
+					<Switch>
+						<Route path='/' exact>
+							<Home />
+						</Route>
+						<Route path='/author' exact>
+							<Author />
+						</Route>
+						<Route path='/authorList' exact>
+							<AuthorList />
+						</Route>
+						<Route path='/book' exact>
+							<Book />
+						</Route>
+						<Route path='/bookList' exact>
+							<BookList />
+						</Route>
+					</Switch>
+				</Router>
 			</ApolloProvider>
 		</div>
 	)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 
-const getBooksQuery = gql`
+const GET_BOOKS = gql`
 	{
 		books {
 			name
@@ -14,8 +14,8 @@ const getBooksQuery = gql`
 `
 
 export default function BookList() {
-	const { loading, error, data } = useQuery(getBooksQuery)
-	if (loading) return <p>LOading...</p>
+	const { loading, error, data } = useQuery(GET_BOOKS)
+	if (loading) return <p>Loading list of books ...</p>
 	if (error) return <p>Error -.-</p>
 
 	return data.books.map(({ name, genre, author }, index) => (
