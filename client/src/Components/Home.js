@@ -6,7 +6,7 @@ const Home = () => {
 	return (
 		<div className='home'>
 			{views.map((view) => (
-				<LinkButton direction={view} />
+				<LinkButton type={view} key={'menu_item_' + view} />
 			))}
 		</div>
 	)

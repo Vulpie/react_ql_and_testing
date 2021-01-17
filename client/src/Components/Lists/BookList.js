@@ -1,5 +1,6 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
+import HomeButton from '../Partials/HomeButton'
 
 const GET_BOOKS = gql`
 	{
@@ -18,11 +19,16 @@ export default function BookList() {
 	if (loading) return <p>Loading list of books ...</p>
 	if (error) return <p>Error -.-</p>
 
-	return data.books.map(({ name, genre, author }, index) => (
-		<div key={'book_' + index}>
-			<p>Title: {name}</p>
-			<p>Genre: {genre}</p>
-			<p>Author: {author.name}</p>
+	return (
+		<div>
+			<HomeButton />
+			{data.books.map(({ name, genre, author }, index) => (
+				<div key={'book_' + index}>
+					<p>Title: {name}</p>
+					<p>Genre: {genre}</p>
+					<p>Author: {author.name}</p>
+				</div>
+			))}
 		</div>
-	))
+	)
 }
