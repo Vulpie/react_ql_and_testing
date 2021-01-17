@@ -2,15 +2,7 @@ const graphql = require('graphql')
 const Book = require('../../db/models/book')
 const { BookType } = require('../types')
 
-const {
-	GraphQLObjectType,
-	GraphQLString,
-	GraphQLSchema,
-	GraphQLID,
-	GraphQLInt,
-	GraphQLList,
-	GraphQLNonNull,
-} = graphql
+const { GraphQLString, GraphQLID, GraphQLNonNull } = graphql
 
 const addBook = {
 	type: BookType,
@@ -20,6 +12,7 @@ const addBook = {
 		authorId: { type: new GraphQLNonNull(GraphQLID) },
 	},
 	resolve(parent, args) {
+		console.table(args)
 		let book = new Book({
 			name: args.name,
 			genre: args.genre,

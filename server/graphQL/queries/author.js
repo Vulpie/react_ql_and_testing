@@ -2,14 +2,7 @@ const Author = require('../../db/models/author')
 const { AuthorType } = require('../types')
 const graphql = require('graphql')
 
-const {
-	GraphQLObjectType,
-	GraphQLString,
-	GraphQLSchema,
-	GraphQLID,
-	GraphQLInt,
-	GraphQLList,
-} = graphql
+const { GraphQLID, GraphQLList } = graphql
 
 const author = {
 	type: AuthorType,

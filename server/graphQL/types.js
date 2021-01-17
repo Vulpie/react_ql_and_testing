@@ -4,7 +4,6 @@ const Book = require('../db/models/book')
 const {
 	GraphQLObjectType,
 	GraphQLString,
-	GraphQLSchema,
 	GraphQLID,
 	GraphQLInt,
 	GraphQLList,
