@@ -1,0 +1,49 @@
+import React from 'react'
+import { gql, useMutation } from '@apollo/client'
+
+const ADD_BOOK = gql`
+	mutation AddBook($name: String!, $genre: String!, $authorId: ID!) {
+		addBook(name: $name, genre: $genre, authorId: $authorId) {
+			name
+			genre
+			id
+		}
+	}
+`
+
+const AddBook = ({ authorId }) => {
+	const [addBook, { data }] = useMutation(ADD_BOOK)
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		const book_name = e.target['book_name'].value
+		let book_genre = e.target['book_genre'].value
+		console.table({ book_name, book_genre })
+
+		addBook({
+			variables: {
+				name: book_name,
+				genre: book_genre,
+				authorId: authorId,
+			},
+		})
+	}
+	if (data) {
+		console.log(data)
+		return <p>Book created</p>
+	}
+
+	return (
+		<form onSubmit={(e) => handleSubmit(e)} className='book-form'>
+			<label htmlFor='book_name'>Book title</label>
+			<input type='text' name='book_name' />
+
+			<label htmlFor='book_genre'>Book genre</label>
+			<input type='text' name='book_genre' />
+
+			<button type='submit'>Add book</button>
+		</form>
+	)
+}
+
+export default AddBook

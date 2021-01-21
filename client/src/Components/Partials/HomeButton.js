@@ -1,10 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import backArrowIcon from '../../assets/undo.svg'
+
 const HomeButton = () => {
 	return (
 		<Link to='/'>
-			<div className='home-button'>{'<-'}</div>
+			<img
+				className='home-button'
+				alt='Return button'
+				src={backArrowIcon}
+			/>
 		</Link>
 	)
 }

@@ -7,6 +7,7 @@ import booksIcon from '../../assets/books.svg'
 
 const LinkButton = ({ type }) => {
 	const [icon, setIcon] = useState('+')
+
 	useLayoutEffect(() => {
 		if (type === 'author' || type === 'authorList') {
 			setIcon(authorIcon)
