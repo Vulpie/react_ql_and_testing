@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render HomeButton correctly 1`] = `
+<Link
+  to="/"
+>
+  <p>
+    Test
+  </p>
+  <img
+    alt="Return button"
+    className="home-button"
+    src="undo.svg"
+  />
+</Link>
+`;
