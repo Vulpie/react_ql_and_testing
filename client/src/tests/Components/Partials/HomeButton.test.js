@@ -7,6 +7,9 @@ import HomeButton from '../../../Components/Partials/HomeButton'
 test('should render HomeButton correctly', () => {
 	const wrapper = shallow(<HomeButton />)
 	expect(wrapper.find('.home-button').length).toBe(1) // find zwraca tablice elementów tak jak querySelectorAll
+
+	expect(wrapper).toMatchSnapshot()
+
 	// const renderer = new ReactShallowRenderer()
 	// renderer.render(<HomeButton />)
 	// expect(renderer.getRenderOutput()).toMatchSnapshot() // the first time it is going to pass because there is no snapshot

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render AuthorList component without error when: Loading state 1`] = `
+<div>
+  <p>
+    Loading list of authors ...
+  </p>
+</div>
+`;
+
+exports[`Render AuthorList component without error when: Success state 1`] = `
+<div>
+  <div>
+    <a
+      href="/"
+    >
+      <img
+        alt="Return button"
+        class="home-button"
+        src=""
+      />
+    </a>
+    <div>
+      <p>
+        Name: 
+        author1
+      </p>
+      <p>
+        Age: 
+        55
+      </p>
+    </div>
+  </div>
+</div>
+`;

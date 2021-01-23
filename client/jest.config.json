@@ -1,8 +1,6 @@
 {
-	"name": "my-project",
-	"jest": {
-		"verbose": true
-	},
+	"snapshotSerializers": ["enzyme-to-json/serializer"],
+	"verbose": true,
 	"setupFilesAfterEnv": ["raf/polyfill", "<rootDir>/src/tests/setupTests.js"],
 	"testPathIgnorePatterns": ["<rootDir>/node_modules/"],
 	"moduleNameMapper": {

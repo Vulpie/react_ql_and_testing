@@ -2,7 +2,7 @@ import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import HomeButton from '../Partials/HomeButton'
 
-const GET_AUTHORS = gql`
+export const GET_AUTHORS = gql`
 	{
 		authors {
 			name
@@ -19,12 +19,13 @@ const AuthorList = () => {
 	return (
 		<div>
 			<HomeButton />
-			{data.authors.map(({ name, age }, index) => (
-				<div key={'author_' + index}>
-					<p>Name: {name}</p>
-					<p>Age: {age}</p>
-				</div>
-			))}
+			{data &&
+				data.authors.map(({ name, age }, index) => (
+					<div key={'author_' + index}>
+						<p>Name: {name}</p>
+						<p>Age: {age}</p>
+					</div>
+				))}
 		</div>
 	)
 }

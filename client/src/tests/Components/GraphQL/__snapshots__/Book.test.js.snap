@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render book component without errror when: Loading state 1`] = `
+<div>
+  <div>
+    <h2>
+      Book
+    </h2>
+    <a
+      href="/"
+    >
+      <img
+        alt="Return button"
+        class="home-button"
+        src=""
+      />
+    </a>
+    <p>
+      Loading list of authors ..
+    </p>
+    <p>
+      Select the author
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Render book component without errror when: Success state 1`] = `
+<div>
+  <div>
+    <h2>
+      Book
+    </h2>
+    <a
+      href="/"
+    >
+      <img
+        alt="Return button"
+        class="home-button"
+        src=""
+      />
+    </a>
+    <select>
+      <option
+        value=""
+      />
+      <option
+        value="1"
+      >
+        author1
+      </option>
+    </select>
+    <p>
+      Select the author
+    </p>
+  </div>
+</div>
+`;

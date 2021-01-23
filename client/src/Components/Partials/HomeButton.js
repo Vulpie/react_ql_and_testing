@@ -11,7 +11,6 @@ const HomeButton = () => {
 				alt='Return button'
 				src={backArrowIcon}
 			/>
-			{/* <p className='home-button'>hejp</p> */}
 		</Link>
 	)
 }

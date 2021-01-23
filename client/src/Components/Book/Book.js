@@ -3,7 +3,7 @@ import HomeButton from '../Partials/HomeButton'
 import { gql, useQuery } from '@apollo/client'
 import AddBook from './AddBook'
 
-const GET_AUTHORS = gql`
+export const GET_AUTHORS = gql`
 	{
 		authors {
 			name
@@ -20,7 +20,7 @@ const Book = () => {
 		<div>
 			<h2>Book</h2>
 			<HomeButton />
-			{loading && <p>Loading list of authors ...</p>}
+			{loading && <p>Loading list of authors ..</p>}
 			{error && <p>Error -.-</p>}
 			{data && (
 				<select
