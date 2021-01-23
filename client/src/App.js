@@ -1,4 +1,4 @@
-import './App.css'
+import './style/App.scss'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -29,6 +29,9 @@ function App() {
 							<AuthorList />
 						</Route>
 						<Route path='/book' exact>
+							<Book />
+						</Route>
+						<Route path='/book/details' exact>
 							<Book />
 						</Route>
 						<Route path='/bookList' exact>

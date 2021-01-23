@@ -1,0 +1,60 @@
+@use '../global/variables';
+
+@mixin block {
+	.author-form {
+		display: flex;
+		flex-direction: column;
+		border: 2px solid black;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+
+		& input {
+			width: 30%;
+			margin: 10px;
+		}
+
+		& label {
+			margin: 10px;
+		}
+
+		& button {
+			padding: 10px;
+			font-size: large;
+			margin: 10px;
+		}
+	}
+
+	.book-form {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 80%;
+		padding: 1rem 0;
+		& * {
+			margin: 0.2rem 0;
+		}
+
+		& label {
+			font-size: 1.2rem;
+		}
+
+		& select {
+			width: 50%;
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		& input {
+			padding: 5px;
+			border-radius: 5px;
+		}
+
+		& button {
+			padding: 5px;
+			border-radius: 5px;
+			background-color: variables.$color_positive;
+		}
+	}
+}

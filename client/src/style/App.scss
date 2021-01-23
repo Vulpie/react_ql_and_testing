@@ -1,0 +1,18 @@
+@use './blocks//buttons';
+@use './blocks/component.scss';
+@use './blocks/form';
+
+@include buttons.block;
+@include component.block;
+@include form.block;
+
+.App {
+	background-color: #eee;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

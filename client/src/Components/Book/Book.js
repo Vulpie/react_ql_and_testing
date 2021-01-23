@@ -17,23 +17,27 @@ const Book = () => {
 	const [selectedAuthor, setSelectedAuthor] = useState()
 
 	return (
-		<div>
-			<h2>Book</h2>
+		<div className='component'>
+			<h2 className='component__title'>Book</h2>
 			<HomeButton />
 			{loading && <p>Loading list of authors ..</p>}
 			{error && <p>Error -.-</p>}
 			{data && (
-				<select
-					value={selectedAuthor}
-					onChange={(e) => setSelectedAuthor(e.target.value)}
-				>
-					<option value=''></option>
-					{data.authors.map(({ name, id }) => (
-						<option key={'author_' + name} value={id}>
-							{name}
-						</option>
-					))}
-				</select>
+				<form className='book-form'>
+					<label htmlFor='select_author'>Select the author</label>
+					<select
+						name='select_author'
+						value={selectedAuthor}
+						onChange={(e) => setSelectedAuthor(e.target.value)}
+					>
+						<option value=''></option>
+						{data.authors.map(({ name, id }) => (
+							<option key={'author_' + name} value={id}>
+								{name}
+							</option>
+						))}
+					</select>
+				</form>
 			)}
 			{selectedAuthor ? (
 				<AddBook authorId={selectedAuthor} />

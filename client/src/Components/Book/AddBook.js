@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import { gql, useMutation } from '@apollo/client'
 
 const ADD_BOOK = gql`
@@ -7,6 +8,9 @@ const ADD_BOOK = gql`
 			name
 			genre
 			id
+			author {
+				id
+			}
 		}
 	}
 `
@@ -20,6 +24,11 @@ const AddBook = ({ authorId }) => {
 		let book_genre = e.target['book_genre'].value
 		console.table({ book_name, book_genre })
 
+		if (!book_name || !book_genre) {
+			console.warn(`Missing name ${book_name} or genre ${book_genre}`)
+			return
+		}
+
 		addBook({
 			variables: {
 				name: book_name,
@@ -30,16 +39,23 @@ const AddBook = ({ authorId }) => {
 	}
 	if (data) {
 		console.log(data)
-		return <p>Book created</p>
+		return (
+			<Redirect
+				to={{
+					pathname: '/book/details',
+					search: `?id=${data.addBook.id}&name=${data.addBook.name}&genre=${data.addBook.genre}&authorId=${data.addBook.author.id}`,
+				}}
+			/>
+		)
 	}
 
 	return (
 		<form onSubmit={(e) => handleSubmit(e)} className='book-form'>
 			<label htmlFor='book_name'>Book title</label>
-			<input type='text' name='book_name' />
+			<input type='text' name='book_name' required />
 
 			<label htmlFor='book_genre'>Book genre</label>
-			<input type='text' name='book_genre' />
+			<input type='text' name='book_genre' required />
 
 			<button type='submit'>Add book</button>
 		</form>
