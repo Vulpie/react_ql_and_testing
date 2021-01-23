@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render AuthorList component GraphQL error 1`] = `
+exports[`Render BookList component GraphQL error 1`] = `
 <div>
   <p>
     Error -.-
@@ -8,15 +8,15 @@ exports[`Render AuthorList component GraphQL error 1`] = `
 </div>
 `;
 
-exports[`Render AuthorList component Loading state 1`] = `
+exports[`Render BookList component Loading state 1`] = `
 <div>
   <p>
-    Loading list of authors ...
+    Loading list of books ...
   </p>
 </div>
 `;
 
-exports[`Render AuthorList component Network error 1`] = `
+exports[`Render BookList component Network error 1`] = `
 <div>
   <p>
     Error -.-
@@ -24,7 +24,7 @@ exports[`Render AuthorList component Network error 1`] = `
 </div>
 `;
 
-exports[`Render AuthorList component Success state 1`] = `
+exports[`Render BookList component Sucess state 1`] = `
 <div>
   <div>
     <a
@@ -38,12 +38,16 @@ exports[`Render AuthorList component Success state 1`] = `
     </a>
     <div>
       <p>
-        Name: 
-        author1
+        Title: 
+        Book1
       </p>
       <p>
-        Age: 
-        55
+        Genre: 
+        Fantasy
+      </p>
+      <p>
+        Author: 
+        Author1
       </p>
     </div>
   </div>

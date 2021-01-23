@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render book component without errror when: Loading state 1`] = `
+exports[`Render book component GraphQL error 1`] = `
+<div>
+  <div>
+    <h2>
+      Book
+    </h2>
+    <a
+      href="/"
+    >
+      <img
+        alt="Return button"
+        class="home-button"
+        src=""
+      />
+    </a>
+    <p>
+      Error -.-
+    </p>
+    <p>
+      Select the author
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Render book component Loading state 1`] = `
 <div>
   <div>
     <h2>
@@ -25,7 +50,32 @@ exports[`Render book component without errror when: Loading state 1`] = `
 </div>
 `;
 
-exports[`Render book component without errror when: Success state 1`] = `
+exports[`Render book component Network error 1`] = `
+<div>
+  <div>
+    <h2>
+      Book
+    </h2>
+    <a
+      href="/"
+    >
+      <img
+        alt="Return button"
+        class="home-button"
+        src=""
+      />
+    </a>
+    <p>
+      Error -.-
+    </p>
+    <p>
+      Select the author
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Render book component Success state 1`] = `
 <div>
   <div>
     <h2>

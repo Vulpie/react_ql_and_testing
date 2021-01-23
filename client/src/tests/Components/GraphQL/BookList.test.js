@@ -1,56 +1,70 @@
 import React from 'react'
 import { MockedProvider } from '@apollo/client/testing'
 import { act, render } from '@testing-library/react'
-import AuthorList, { GET_AUTHORS } from '../../../Components/Lists/AuthorList'
+import BookList, { GET_BOOKS } from '../../../Components/Lists/BookList'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const { GraphQLError } = require('graphql')
 
-describe('Render AuthorList component', () => {
+describe('Render BookList component', () => {
 	test('Loading state', () => {
 		const mocks = []
 		const { getByText, container } = render(
 			<MockedProvider mocks={mocks} addTypename={false}>
 				<Router>
-					<AuthorList />
+					<BookList />
 				</Router>
 			</MockedProvider>
 		)
-		expect(getByText('Loading list of authors ...')).toBeInTheDocument()
+
+		expect(getByText('Loading list of books ...')).toBeInTheDocument()
 		expect(container).toMatchSnapshot()
 	})
-
-	test('Success state', async () => {
-		const mocks = {
-			request: { query: GET_AUTHORS },
-			result: { data: { authors: [{ name: 'author1', age: 55 }] } },
-		}
-
+	test('Sucess state', async () => {
+		const mocks = [
+			{
+				request: { query: GET_BOOKS },
+				result: {
+					data: {
+						books: [
+							{
+								name: 'Book1',
+								genre: 'Fantasy',
+								author: {
+									name: 'Author1',
+								},
+							},
+						],
+					},
+				},
+			},
+		]
 		const { getByText, container } = render(
-			<MockedProvider mocks={[mocks]} addTypename={false}>
+			<MockedProvider mocks={mocks} addTypename={false}>
 				<Router>
-					<AuthorList />
+					<BookList />
 				</Router>
 			</MockedProvider>
 		)
 		await act(async () => {
 			await new Promise((resolve) => setTimeout(resolve, 0))
 		})
+		expect(getByText('Title: Book1')).toBeInTheDocument()
+		expect(getByText('Genre: Fantasy')).toBeInTheDocument()
+		expect(getByText('Author: Author1')).toBeInTheDocument()
 		expect(container).toMatchSnapshot()
-		expect(getByText('Name: author1')).toBeInTheDocument()
-		expect(getByText('Age: 55')).toBeInTheDocument()
 	})
 	test('Network error', async () => {
 		const mocks = [
 			{
-				request: { query: GET_AUTHORS },
+				request: { query: GET_BOOKS },
 				error: new Error('An error occurred'),
 			},
 		]
 		const { getByText, container } = render(
 			<MockedProvider mocks={mocks} addTypename={false}>
 				<Router>
-					<AuthorList />
+					<BookList />
 				</Router>
 			</MockedProvider>
 		)
@@ -65,7 +79,7 @@ describe('Render AuthorList component', () => {
 	test('GraphQL error', async () => {
 		const mocks = [
 			{
-				request: { query: GET_AUTHORS },
+				request: { query: GET_BOOKS },
 				result: {
 					errors: [new GraphQLError('Error!')],
 				},
@@ -74,7 +88,7 @@ describe('Render AuthorList component', () => {
 		const { getByText, container } = render(
 			<MockedProvider mocks={mocks} addTypename={false}>
 				<Router>
-					<AuthorList />
+					<BookList />
 				</Router>
 			</MockedProvider>
 		)

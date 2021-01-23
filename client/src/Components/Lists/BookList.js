@@ -2,7 +2,7 @@ import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import HomeButton from '../Partials/HomeButton'
 
-const GET_BOOKS = gql`
+export const GET_BOOKS = gql`
 	{
 		books {
 			name
