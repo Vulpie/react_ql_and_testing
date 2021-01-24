@@ -36,7 +36,7 @@ const BookDetails = () => {
 				<div className='details__item'>
 					<p className='details__item_header'>Title</p>
 					<p className='details__item_value'>
-						{data && data.book && data.book.name}
+						"{data && data.book && data.book.name}"
 					</p>
 				</div>
 				<div className='details__item'>

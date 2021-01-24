@@ -1,37 +1,16 @@
+@use '../global/borders';
 @use '../global/variables';
 
 @mixin block {
-	.author-form {
-		display: flex;
-		flex-direction: column;
-		border: 2px solid black;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-
-		& input {
-			width: 30%;
-			margin: 10px;
-		}
-
-		& label {
-			margin: 10px;
-		}
-
-		& button {
-			padding: 10px;
-			font-size: large;
-			margin: 10px;
-		}
-	}
-
-	.book-form {
+	.form {
 		width: 50%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 80%;
+		height: fit-content;
 		padding: 1rem 0;
+		background-color: variables.$color_main_color-alpha_0_5;
+		@include borders.border-clear;
 		& * {
 			margin: 0.2rem 0;
 		}

@@ -43,7 +43,7 @@ const AddBook = ({ authorId }) => {
 	}
 
 	return (
-		<form onSubmit={(e) => handleSubmit(e)} className='book-form'>
+		<form onSubmit={(e) => handleSubmit(e)} className='form'>
 			<label htmlFor='book_name'>Book title</label>
 			<input type='text' name='book_name' required />
 

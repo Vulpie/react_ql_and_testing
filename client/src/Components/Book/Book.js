@@ -23,7 +23,7 @@ const Book = () => {
 			{loading && <p>Loading list of authors ..</p>}
 			{error && <p>Error -.-</p>}
 			{data && (
-				<form className='book-form'>
+				<form className='form'>
 					<label htmlFor='select_author'>Select the author</label>
 					<select
 						name='select_author'
@@ -39,11 +39,7 @@ const Book = () => {
 					</select>
 				</form>
 			)}
-			{selectedAuthor ? (
-				<AddBook authorId={selectedAuthor} />
-			) : (
-				<p>Select the author</p>
-			)}
+			{selectedAuthor && <AddBook authorId={selectedAuthor} />}
 		</div>
 	)
 }

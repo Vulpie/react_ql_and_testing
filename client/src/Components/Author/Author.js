@@ -4,9 +4,10 @@ import AddAuthor from './AddAuthor'
 
 const Author = () => {
 	return (
-		<div>
-			<h2>Author</h2>
+		<div className='component'>
 			<HomeButton />
+			<h2 className='component__title'>Author</h2>
+
 			<AddAuthor />
 		</div>
 	)

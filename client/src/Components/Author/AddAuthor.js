@@ -32,7 +32,7 @@ const AddAuthor = () => {
 	}
 
 	return (
-		<form onSubmit={(e) => handleSubmit(e)} className='author-form'>
+		<form onSubmit={(e) => handleSubmit(e)} className='form'>
 			<label htmlFor='author_name'>Author name</label>
 			<input type='text' name='author_name' />
 
