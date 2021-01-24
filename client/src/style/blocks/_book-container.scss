@@ -1,4 +1,5 @@
 @use '../global/variables';
+@use '../global/borders';
 
 @mixin block {
 	.books-containter {
@@ -8,15 +9,15 @@
 		grid-template-columns: 25% 25% 25% 25%;
 		grid-gap: 10px;
 		column-gap: 10px;
-		background-color: rgba(variables.$color_main_color, 0.2);
+		background-color: variables.$color_main_color-alpha_0_2;
 		padding: 10px;
-		border-radius: 0 15px 15px 15px;
+		@include borders.border-clear;
 		box-sizing: border-box;
 		.book-containter {
 			height: fit-content;
-			border: 1px solid black;
-			border-radius: 0 15px 15px 15px;
-			background-color: rgba(variables.$color_main_color, 0.5);
+
+			@include borders.border-solid;
+			background-color: variables.$color_main_color-alpha_0_5;
 			&__item {
 				box-sizing: border-box;
 				width: 100%;

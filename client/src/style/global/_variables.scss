@@ -2,3 +2,6 @@ $color_positive: rgb(21, 204, 21);
 $color_main_color: rgb(233, 229, 229);
 $color_main_background: rgb(76, 52, 95);
 $color_main_background--hover: rgb(97, 60, 128);
+
+$color_main_color-alpha_0_2: rgba($color_main_color, 0.2);
+$color_main_color-alpha_0_5: rgba($color_main_color, 0.5);

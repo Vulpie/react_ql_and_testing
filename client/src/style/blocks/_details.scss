@@ -1,0 +1,15 @@
+@use '../global/variables';
+
+@mixin block {
+	.details {
+		background-color: variables.$color_main_color-alpha_0_2;
+		&__item {
+			&_header {
+				font-size: 1.5rem;
+			}
+			&_value {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}

@@ -2,12 +2,13 @@
 @use './blocks/component.scss';
 @use './blocks/form';
 @use './blocks/book-container';
+@use './blocks/details';
 
 @include buttons.block;
 @include component.block;
 @include form.block;
 @include book-container.block;
-
+@include details.block;
 .App {
 	background-color: #eee;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

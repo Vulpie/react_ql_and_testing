@@ -32,22 +32,22 @@ const BookDetails = () => {
 			<h2 className='component__title'>
 				"{data && data.book && data.book.name}"
 			</h2>
-			<div className='book-details'>
-				<div className='book-details__item'>
-					<p className='book-details__item_header'>Title</p>
-					<p className='book-details__item_value'>
+			<div className='details'>
+				<div className='details__item'>
+					<p className='details__item_header'>Title</p>
+					<p className='details__item_value'>
 						{data && data.book && data.book.name}
 					</p>
 				</div>
-				<div className='book-details__item'>
-					<p className='book-details__item_header'>Genre</p>
-					<p className='book-details__item_value'>
+				<div className='details__item'>
+					<p className='details__item_header'>Genre</p>
+					<p className='details__item_value'>
 						{data && data.book && data.book.genre}
 					</p>
 				</div>
-				<div className='book-details__item'>
-					<p className='book-details__item_header'>Author</p>
-					<p className='book-details__item_value'>
+				<div className='details__item'>
+					<p className='details__item_header'>Author</p>
+					<p className='details__item_value'>
 						{data && data.book && data.book.author.name}
 					</p>
 				</div>
