@@ -40,12 +40,7 @@ const AddBook = ({ authorId }) => {
 	if (data) {
 		console.log(data)
 		return (
-			<Redirect
-				to={{
-					pathname: '/book/details',
-					search: `?id=${data.addBook.id}&name=${data.addBook.name}&genre=${data.addBook.genre}&authorId=${data.addBook.author.id}`,
-				}}
-			/>
+			<Redirect to={{ pathname: `/book/details/${data.addBook.id}` }} />
 		)
 	}
 

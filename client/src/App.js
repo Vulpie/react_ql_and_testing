@@ -7,6 +7,7 @@ import Book from './Components/Book/Book'
 import Home from './Components/Home'
 import Author from './Components/Author/Author'
 import AuthorList from './Components/Lists/AuthorList'
+import BookDetails from './Components/Book/BookDetails'
 
 const client = new ApolloClient({
 	uri: '/graphql',
@@ -31,8 +32,8 @@ function App() {
 						<Route path='/book' exact>
 							<Book />
 						</Route>
-						<Route path='/book/details' exact>
-							<Book />
+						<Route path='/book/details/:id' exact>
+							<BookDetails />
 						</Route>
 						<Route path='/bookList' exact>
 							<BookList />
