@@ -1,0 +1,40 @@
+@use '../global/variables';
+
+@mixin block {
+	.books-containter {
+		width: 80%;
+		height: 80%;
+		display: grid;
+		grid-template-columns: 25% 25% 25% 25%;
+		grid-gap: 10px;
+		column-gap: 10px;
+		background-color: rgba(variables.$color_main_color, 0.2);
+		padding: 10px;
+		border-radius: 0 15px 15px 15px;
+		box-sizing: border-box;
+		.book-containter {
+			height: fit-content;
+			border: 1px solid black;
+			border-radius: 0 15px 15px 15px;
+			background-color: rgba(variables.$color_main_color, 0.5);
+			&__item {
+				box-sizing: border-box;
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 1rem;
+				&_header {
+					font-size: 1.2rem;
+					font-weight: 700;
+				}
+				&_value {
+					font-size: 1.1rem;
+					word-break: break-all;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+	}
+}

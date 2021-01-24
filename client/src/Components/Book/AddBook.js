@@ -39,9 +39,7 @@ const AddBook = ({ authorId }) => {
 	}
 	if (data) {
 		console.log(data)
-		return (
-			<Redirect to={{ pathname: `/book/details/${data.addBook.id}` }} />
-		)
+		return <Redirect to={`/book/details/${data.addBook.id}`} />
 	}
 
 	return (

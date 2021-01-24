@@ -1,3 +1,5 @@
+@use '../global/variables';
+
 @mixin block {
 	.link-button {
 		padding: 15px;
@@ -9,13 +11,18 @@
 		justify-content: center;
 		align-items: center;
 		column-gap: 10px;
+		background-color: variables.$color_main_background;
+		color: variables.$color_main_color;
 		&:hover {
-			background-color: rgb(175, 170, 170);
+			background-color: variables.$color_main_background--hover;
+			color: variables.$color_main_color;
 			cursor: pointer;
 		}
 		&__icon {
 			width: 50px;
 			height: 50px;
+			fill: variables.$color_main_color !important;
+			// stroke-width: 2px;
 		}
 	}
 
@@ -27,8 +34,10 @@
 		position: fixed;
 		left: 15px;
 		top: 15px;
+		background-color: variables.$color_main_background;
+		color: variables.$color_main_color;
 		&:hover {
-			background-color: rgb(175, 170, 170);
+			background-color: variables.$color_main_background--hover;
 		}
 	}
 }

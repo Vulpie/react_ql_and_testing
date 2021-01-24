@@ -23,7 +23,7 @@ const LinkButton = ({ type }) => {
 				<img
 					className='link-button__icon'
 					src={icon}
-					alt={`${type} icon for men ubutton`}
+					alt={`${type} icon for menu button`}
 				/>
 				<div className='link-button__text'>{type}</div>
 			</div>

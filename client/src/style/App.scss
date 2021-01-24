@@ -1,10 +1,12 @@
 @use './blocks//buttons';
 @use './blocks/component.scss';
 @use './blocks/form';
+@use './blocks/book-container';
 
 @include buttons.block;
 @include component.block;
 @include form.block;
+@include book-container.block;
 
 .App {
 	background-color: #eee;
@@ -15,4 +17,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-image: url('../assets/background.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
