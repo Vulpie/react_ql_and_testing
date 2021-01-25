@@ -1,5 +1,6 @@
 import React from 'react'
 import { gql, useMutation } from '@apollo/client'
+import { Redirect } from 'react-router-dom'
 
 const ADD_AUTHOR = gql`
 	mutation AddAuthor($name: String!, $age: Int!) {
@@ -28,7 +29,7 @@ const AddAuthor = () => {
 
 	if (data) {
 		console.log(data)
-		return <p>Author created</p>
+		return <Redirect to={`/author/details/${data.addAuthor.id}`} />
 	}
 
 	return (
