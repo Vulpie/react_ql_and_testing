@@ -2,7 +2,7 @@
 @use '../global/borders';
 
 @mixin block {
-	.books-containter {
+	.grid-container {
 		width: 80%;
 		height: 80%;
 		display: grid;
@@ -13,12 +13,12 @@
 		padding: 10px;
 		@include borders.border-clear;
 		box-sizing: border-box;
-		.book-containter {
+		&__block {
 			height: fit-content;
 
 			@include borders.border-solid;
 			background-color: variables.$color_main_color-alpha_0_5;
-			&__item {
+			&_property {
 				box-sizing: border-box;
 				width: 100%;
 				display: flex;

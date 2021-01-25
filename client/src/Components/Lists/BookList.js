@@ -24,31 +24,31 @@ export default function BookList() {
 	return (
 		<div className='component'>
 			<HomeButton />
-			<div className='books-containter'>
+			<div className='grid-container'>
 				{data.books.map(({ id, name, genre, author }, index) => (
 					<Link to={`/book/details/${id}`} key={'book_' + index}>
-						<div className='book-containter'>
-							<div className='book-containter__item'>
-								<p className='book-containter__item_header'>
+						<div className='grid-container__block'>
+							<div className='grid-container__block_property'>
+								<p className='grid-container__block_property_header'>
 									Title:
 								</p>
-								<p className='book-containter__item_value'>
+								<p className='grid-container__block_property_value'>
 									{name}
 								</p>
 							</div>
-							<div className='book-containter__item'>
-								<p className='book-containter__item_header'>
+							<div className='grid-container__block_property'>
+								<p className='grid-container__block_property_header'>
 									Genre:
 								</p>
-								<p className='book-containter__item_value'>
+								<p className='grid-container__block_property_value'>
 									{genre}
 								</p>
 							</div>
-							<div className='book-containter__item'>
-								<p className='book-containter__item_header'>
+							<div className='grid-container__block_property'>
+								<p className='grid-container__block_property_header'>
 									Author:
 								</p>
-								<p className='book-containter__item_value'>
+								<p className='grid-container__block_property_value'>
 									{author.name}
 								</p>
 							</div>

@@ -1,13 +1,13 @@
 @use './blocks//buttons';
 @use './blocks/component.scss';
 @use './blocks/form';
-@use './blocks/book-container';
+@use './blocks/grid-container';
 @use './blocks/details';
 
 @include buttons.block;
 @include component.block;
 @include form.block;
-@include book-container.block;
+@include grid-container.block;
 @include details.block;
 .App {
 	background-color: #eee;
