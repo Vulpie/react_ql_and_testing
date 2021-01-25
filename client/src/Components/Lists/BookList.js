@@ -25,36 +25,38 @@ export default function BookList() {
 		<div className='component'>
 			<HomeButton />
 			<div className='grid-container'>
-				{data.books.map(({ id, name, genre, author }, index) => (
-					<Link to={`/book/details/${id}`} key={'book_' + index}>
-						<div className='grid-container__block'>
-							<div className='grid-container__block_property'>
-								<p className='grid-container__block_property_header'>
-									Title:
-								</p>
-								<p className='grid-container__block_property_value'>
-									{name}
-								</p>
+				{data &&
+					data.books &&
+					data.books.map(({ id, name, genre, author }, index) => (
+						<Link to={`/book/details/${id}`} key={'book_' + index}>
+							<div className='grid-container__block'>
+								<div className='grid-container__block_property'>
+									<p className='grid-container__block_property_header'>
+										Title:
+									</p>
+									<p className='grid-container__block_property_value'>
+										{name}
+									</p>
+								</div>
+								<div className='grid-container__block_property'>
+									<p className='grid-container__block_property_header'>
+										Genre:
+									</p>
+									<p className='grid-container__block_property_value'>
+										{genre}
+									</p>
+								</div>
+								<div className='grid-container__block_property'>
+									<p className='grid-container__block_property_header'>
+										Author:
+									</p>
+									<p className='grid-container__block_property_value'>
+										{author.name}
+									</p>
+								</div>
 							</div>
-							<div className='grid-container__block_property'>
-								<p className='grid-container__block_property_header'>
-									Genre:
-								</p>
-								<p className='grid-container__block_property_value'>
-									{genre}
-								</p>
-							</div>
-							<div className='grid-container__block_property'>
-								<p className='grid-container__block_property_header'>
-									Author:
-								</p>
-								<p className='grid-container__block_property_value'>
-									{author.name}
-								</p>
-							</div>
-						</div>
-					</Link>
-				))}
+						</Link>
+					))}
 			</div>
 		</div>
 	)

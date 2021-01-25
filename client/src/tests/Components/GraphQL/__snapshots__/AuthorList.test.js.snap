@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render BookList component GraphQL error 1`] = `
+exports[`Render AuthorList component GraphQL error 1`] = `
 <div>
   <p>
     Error -.-
@@ -8,15 +8,15 @@ exports[`Render BookList component GraphQL error 1`] = `
 </div>
 `;
 
-exports[`Render BookList component Loading state 1`] = `
+exports[`Render AuthorList component Loading state 1`] = `
 <div>
   <p>
-    Loading list of books ...
+    Loading list of authors ...
   </p>
 </div>
 `;
 
-exports[`Render BookList component Network error 1`] = `
+exports[`Render AuthorList component Network error 1`] = `
 <div>
   <p>
     Error -.-
@@ -24,7 +24,7 @@ exports[`Render BookList component Network error 1`] = `
 </div>
 `;
 
-exports[`Render BookList component Sucess state 1`] = `
+exports[`Render AuthorList component Success state 1`] = `
 <div>
   <div
     class="component"
@@ -42,7 +42,7 @@ exports[`Render BookList component Sucess state 1`] = `
       class="grid-container"
     >
       <a
-        href="/book/details/1"
+        href="/author/details/1"
       >
         <div
           class="grid-container__block"
@@ -53,12 +53,12 @@ exports[`Render BookList component Sucess state 1`] = `
             <p
               class="grid-container__block_property_header"
             >
-              Title:
+              Name:
             </p>
             <p
               class="grid-container__block_property_value"
             >
-              Book1
+              author1
             </p>
           </div>
           <div
@@ -67,26 +67,12 @@ exports[`Render BookList component Sucess state 1`] = `
             <p
               class="grid-container__block_property_header"
             >
-              Genre:
+              Age:
             </p>
             <p
               class="grid-container__block_property_value"
             >
-              Fantasy
-            </p>
-          </div>
-          <div
-            class="grid-container__block_property"
-          >
-            <p
-              class="grid-container__block_property_header"
-            >
-              Author:
-            </p>
-            <p
-              class="grid-container__block_property_value"
-            >
-              Author1
+              55
             </p>
           </div>
         </div>

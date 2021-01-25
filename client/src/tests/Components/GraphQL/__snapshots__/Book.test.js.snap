@@ -2,8 +2,12 @@
 
 exports[`Render book component GraphQL error 1`] = `
 <div>
-  <div>
-    <h2>
+  <div
+    class="component"
+  >
+    <h2
+      class="component__title"
+    >
       Book
     </h2>
     <a
@@ -18,17 +22,18 @@ exports[`Render book component GraphQL error 1`] = `
     <p>
       Error -.-
     </p>
-    <p>
-      Select the author
-    </p>
   </div>
 </div>
 `;
 
 exports[`Render book component Loading state 1`] = `
 <div>
-  <div>
-    <h2>
+  <div
+    class="component"
+  >
+    <h2
+      class="component__title"
+    >
       Book
     </h2>
     <a
@@ -43,17 +48,18 @@ exports[`Render book component Loading state 1`] = `
     <p>
       Loading list of authors ..
     </p>
-    <p>
-      Select the author
-    </p>
   </div>
 </div>
 `;
 
 exports[`Render book component Network error 1`] = `
 <div>
-  <div>
-    <h2>
+  <div
+    class="component"
+  >
+    <h2
+      class="component__title"
+    >
       Book
     </h2>
     <a
@@ -68,17 +74,18 @@ exports[`Render book component Network error 1`] = `
     <p>
       Error -.-
     </p>
-    <p>
-      Select the author
-    </p>
   </div>
 </div>
 `;
 
 exports[`Render book component Success state 1`] = `
 <div>
-  <div>
-    <h2>
+  <div
+    class="component"
+  >
+    <h2
+      class="component__title"
+    >
       Book
     </h2>
     <a
@@ -90,19 +97,27 @@ exports[`Render book component Success state 1`] = `
         src=""
       />
     </a>
-    <select>
-      <option
-        value=""
-      />
-      <option
-        value="1"
+    <form
+      class="form"
+    >
+      <label
+        for="select_author"
       >
-        author1
-      </option>
-    </select>
-    <p>
-      Select the author
-    </p>
+        Select the author
+      </label>
+      <select
+        name="select_author"
+      >
+        <option
+          value=""
+        />
+        <option
+          value="1"
+        >
+          author1
+        </option>
+      </select>
+    </form>
   </div>
 </div>
 `;

@@ -23,7 +23,9 @@ describe('Render AuthorList component', () => {
 	test('Success state', async () => {
 		const mocks = {
 			request: { query: GET_AUTHORS },
-			result: { data: { authors: [{ name: 'author1', age: 55 }] } },
+			result: {
+				data: { authors: [{ name: 'author1', age: 55, id: 1 }] },
+			},
 		}
 
 		const { getByText, container } = render(
@@ -37,8 +39,8 @@ describe('Render AuthorList component', () => {
 			await new Promise((resolve) => setTimeout(resolve, 0))
 		})
 		expect(container).toMatchSnapshot()
-		expect(getByText('Name: author1')).toBeInTheDocument()
-		expect(getByText('Age: 55')).toBeInTheDocument()
+		expect(getByText('author1')).toBeInTheDocument()
+		expect(getByText('55')).toBeInTheDocument()
 	})
 	test('Network error', async () => {
 		const mocks = [

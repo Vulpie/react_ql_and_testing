@@ -28,6 +28,7 @@ describe('Render BookList component', () => {
 					data: {
 						books: [
 							{
+								id: '1',
 								name: 'Book1',
 								genre: 'Fantasy',
 								author: {
@@ -49,9 +50,9 @@ describe('Render BookList component', () => {
 		await act(async () => {
 			await new Promise((resolve) => setTimeout(resolve, 0))
 		})
-		expect(getByText('Title: Book1')).toBeInTheDocument()
-		expect(getByText('Genre: Fantasy')).toBeInTheDocument()
-		expect(getByText('Author: Author1')).toBeInTheDocument()
+		expect(getByText('Book1')).toBeInTheDocument()
+		expect(getByText('Fantasy')).toBeInTheDocument()
+		expect(getByText('Author1')).toBeInTheDocument()
 		expect(container).toMatchSnapshot()
 	})
 	test('Network error', async () => {
