@@ -1,7 +1,7 @@
 import React from 'react'
 import { MockedProvider } from '@apollo/client/testing'
 import { act, render } from '@testing-library/react'
-import BookList, { GET_BOOKS } from '../../../Components/Lists/BookList'
+import BookList, { GET_BOOKS } from '../../../../Components/Lists/BookList'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 const { GraphQLError } = require('graphql')
